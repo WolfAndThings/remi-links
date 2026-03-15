@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Remi | @remi.mp4</title>
+<meta name="description" content="remi - miami girl with pink hair & too many selfies">
+<meta property="og:title" content="Remi | @remi.mp4">
+<meta property="og:description" content="miami girl with pink hair & too many selfies">
+<meta property="og:image" content="https://files.catbox.moe/0hotee.png">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+
+  :root{
+    --pink:#FF69B4;
+    --pink-dark:#d4549a;
+    --pink-glow:rgba(255,105,180,.45);
+    --bg:#0e0e0e;
+    --card:#1a1a1a;
+    --card-hover:#222;
+    --text:#f0f0f0;
+    --sub:#999;
+  }
+
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    overflow-x:hidden;
+  }
+
+  body::before{
+    content:'';
+    position:fixed;
+    inset:0;
+    background:linear-gradient(
+      135deg,
+      #0e0e0e 0%,
+      #1e1020 30%,
+      #0e0e0e 50%,
+      #151225 70%,
+      #0e0e0e 100%
+    );
+    background-size:400% 400%;
+    animation:gradientShift 15s ease infinite;
+    z-index:0;
+  }
+
+  @keyframes gradientShift{
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+  }
+
+  .container{
+    position:relative;
+    z-index:1;
+    width:100%;
+    max-width:440px;
+    padding:48px 20px 64px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:6px;
+  }
+
+  .avatar{
+    width:110px;
+    height:110px;
+    border-radius:50%;
+    background:var(--card);
+    border:3px solid var(--pink);
+    box-shadow:0 0 20px var(--pink-glow),0 0 60px rgba(255,105,180,.12);
+    overflow:hidden;
+    margin-bottom:10px;
+    user-select:none;
+  }
+
+  .avatar img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+  }
+
+  .name{
+    font-size:26px;
+    font-weight:700;
+    letter-spacing:-.5px;
+  }
+
+  .handle{
+    font-size:13px;
+    color:var(--sub);
+    margin-top:2px;
+  }
+
+  .tagline{
+    font-size:14px;
+    color:var(--pink);
+    margin:8px 0 24px;
+    font-weight:500;
+    opacity:.9;
+  }
+
+  /* stats row */
+  .stats{
+    display:flex;
+    gap:28px;
+    margin-bottom:24px;
+    font-size:13px;
+    color:var(--sub);
+  }
+  .stats span{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:2px;
+  }
+  .stats strong{
+    color:var(--text);
+    font-size:16px;
+    font-weight:700;
+  }
+
+  .links{
+    width:100%;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+  }
+
+  .link-btn{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    width:100%;
+    padding:15px 20px;
+    background:var(--card);
+    border:1px solid rgba(255,105,180,.12);
+    border-radius:14px;
+    color:var(--text);
+    text-decoration:none;
+    font-size:15px;
+    font-weight:600;
+    text-align:center;
+    letter-spacing:.2px;
+    transition:all .25s ease;
+    position:relative;
+    overflow:hidden;
+  }
+
+  .link-btn::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    border-radius:14px;
+    opacity:0;
+    background:radial-gradient(circle at center,var(--pink-glow) 0%,transparent 70%);
+    transition:opacity .3s ease;
+  }
+
+  .link-btn:hover,.link-btn:focus-visible{
+    border-color:var(--pink);
+    box-shadow:0 0 18px rgba(255,105,180,.2),0 4px 20px rgba(0,0,0,.3);
+    transform:translateY(-2px);
+    background:var(--card-hover);
+  }
+
+  .link-btn:hover::before{opacity:1}
+
+  .link-btn:active{
+    transform:translateY(0);
+    box-shadow:0 0 10px rgba(255,105,180,.12);
+  }
+
+  .link-btn .icon{
+    font-size:18px;
+    position:relative;
+    z-index:1;
+  }
+
+  .link-btn .label{
+    position:relative;
+    z-index:1;
+  }
+
+  .link-btn.featured{
+    background:linear-gradient(135deg,var(--pink-dark),var(--pink));
+    border:none;
+    color:#fff;
+    font-size:16px;
+    padding:17px 20px;
+  }
+
+  .link-btn.featured::before{
+    background:radial-gradient(circle at center,rgba(255,255,255,.15) 0%,transparent 70%);
+  }
+
+  .link-btn.featured:hover{
+    box-shadow:0 0 28px var(--pink-glow),0 4px 32px rgba(0,0,0,.4);
+    background:linear-gradient(135deg,var(--pink-dark),var(--pink));
+  }
+
+  /* social row */
+  .socials{
+    display:flex;
+    gap:16px;
+    margin-top:24px;
+  }
+
+  .social-icon{
+    width:44px;
+    height:44px;
+    border-radius:50%;
+    background:var(--card);
+    border:1px solid rgba(255,105,180,.12);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--sub);
+    text-decoration:none;
+    font-size:18px;
+    transition:all .25s ease;
+  }
+
+  .social-icon:hover{
+    border-color:var(--pink);
+    color:var(--pink);
+    box-shadow:0 0 14px rgba(255,105,180,.2);
+    transform:translateY(-2px);
+  }
+
+  .social-icon svg{
+    width:20px;
+    height:20px;
+    fill:currentColor;
+  }
+
+  .footer{
+    margin-top:36px;
+    font-size:11px;
+    color:#444;
+    letter-spacing:.5px;
+  }
+
+  .sparkle{
+    position:fixed;
+    width:2px;
+    height:2px;
+    border-radius:50%;
+    background:var(--pink);
+    opacity:0;
+    pointer-events:none;
+    z-index:0;
+    animation:sparkle 4s ease-in-out infinite;
+  }
+
+  @keyframes sparkle{
+    0%,100%{opacity:0;transform:scale(0)}
+    50%{opacity:.5;transform:scale(1)}
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="avatar">
+    <img src="https://files.catbox.moe/0hotee.png" alt="Remi">
+  </div>
+
+  <h1 class="name">remi</h1>
+  <p class="handle">@remi.mp4</p>
+  <p class="tagline">miami girl w pink hair & too many selfies</p>
+
+  <div class="links">
+    <a href="https://fanvue.com/remimp4" target="_blank" rel="noopener" class="link-btn featured">
+      <span class="icon">&#x1F525;</span>
+      <span class="label">exclusive content</span>
+    </a>
+    <a href="https://instagram.com/remi.mp4" target="_blank" rel="noopener" class="link-btn">
+      <span class="icon">&#x1F4F8;</span>
+      <span class="label">instagram</span>
+    </a>
+    <a href="#" class="link-btn">
+      <span class="icon">&#x1F4AC;</span>
+      <span class="label">dm me on ig for custom requests</span>
+    </a>
+    <a href="#" class="link-btn">
+      <span class="icon">&#x1F3AC;</span>
+      <span class="label">tiktok (coming soon)</span>
+    </a>
+  </div>
+
+  <div class="socials">
+    <!-- Instagram -->
+    <a href="https://instagram.com/remi.mp4" target="_blank" rel="noopener" class="social-icon" title="Instagram">
+      <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+    </a>
+    <!-- TikTok -->
+    <a href="#" class="social-icon" title="TikTok">
+      <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.88-2.88 2.89 2.89 0 0 1 2.88-2.88c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 0 0-.79-.05A6.34 6.34 0 0 0 3.15 15a6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.75a8.18 8.18 0 0 0 4.76 1.52v-3.4a4.85 4.85 0 0 1-1-.18z"/></svg>
+    </a>
+    <!-- Twitter/X -->
+    <a href="#" class="social-icon" title="Twitter">
+      <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+    </a>
+  </div>
+
+  <p class="footer">remi.mp4</p>
+</div>
+
+<script>
+(function(){
+  var count=15;
+  for(var i=0;i<count;i++){
+    var s=document.createElement('div');
+    s.className='sparkle';
+    s.style.left=Math.random()*100+'vw';
+    s.style.top=Math.random()*100+'vh';
+    s.style.animationDelay=(Math.random()*4)+'s';
+    s.style.animationDuration=(3+Math.random()*4)+'s';
+    s.style.width=s.style.height=(1+Math.random()*2)+'px';
+    document.body.appendChild(s);
+  }
+})();
+</script>
+</body>
+</html>
