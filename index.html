@@ -3,330 +3,653 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Remi | @remi.mp4</title>
-<meta name="description" content="remi - miami girl with pink hair & too many selfies">
-<meta property="og:title" content="Remi | @remi.mp4">
-<meta property="og:description" content="miami girl with pink hair & too many selfies">
+<title>Remi | Fanvue</title>
+<meta name="description" content="Remi on Fanvue. Pink hair, Miami energy, weekly drops, direct replies, and a live free-trial offer.">
+<meta property="og:title" content="Remi | Fanvue">
+<meta property="og:description" content="Pink hair, Miami energy, weekly drops, and a live free-trial offer.">
 <meta property="og:image" content="https://files.catbox.moe/0hotee.png">
+<meta name="theme-color" content="#f4eadf">
+<link rel="icon" href="https://files.catbox.moe/0hotee.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-  *{margin:0;padding:0;box-sizing:border-box}
+  *{box-sizing:border-box;margin:0;padding:0}
 
   :root{
-    --pink:#FF69B4;
-    --pink-dark:#d4549a;
-    --pink-glow:rgba(255,105,180,.45);
-    --bg:#0e0e0e;
-    --card:#1a1a1a;
-    --card-hover:#222;
-    --text:#f0f0f0;
-    --sub:#999;
+    --cream:#f4eadf;
+    --sand:#e8d7c4;
+    --rose:#ff6c97;
+    --rose-deep:#d94a7c;
+    --ink:#171116;
+    --ink-soft:#5d4d57;
+    --card:rgba(255,248,242,.72);
+    --line:rgba(23,17,22,.10);
+    --shadow:0 24px 80px rgba(44,21,32,.12);
   }
 
   body{
-    font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
-    background:var(--bg);
-    color:var(--text);
     min-height:100vh;
-    display:flex;
-    justify-content:center;
+    font-family:"Manrope",system-ui,sans-serif;
+    color:var(--ink);
+    background:
+      radial-gradient(circle at 12% 18%, rgba(255,119,167,.22), transparent 28%),
+      radial-gradient(circle at 88% 20%, rgba(255,196,138,.34), transparent 26%),
+      radial-gradient(circle at 72% 74%, rgba(255,145,187,.16), transparent 24%),
+      linear-gradient(180deg, #fff9f4 0%, var(--cream) 42%, #efe1d3 100%);
     overflow-x:hidden;
   }
 
-  body::before{
-    content:'';
+  body::before,
+  body::after{
+    content:"";
     position:fixed;
     inset:0;
-    background:linear-gradient(
-      135deg,
-      #0e0e0e 0%,
-      #1e1020 30%,
-      #0e0e0e 50%,
-      #151225 70%,
-      #0e0e0e 100%
-    );
-    background-size:400% 400%;
-    animation:gradientShift 15s ease infinite;
+    pointer-events:none;
     z-index:0;
   }
 
-  @keyframes gradientShift{
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
+  body::before{
+    background:
+      linear-gradient(120deg, rgba(255,255,255,.35), transparent 42%),
+      linear-gradient(300deg, rgba(255,255,255,.16), transparent 40%);
   }
 
-  .container{
+  body::after{
+    opacity:.18;
+    background-image:
+      radial-gradient(rgba(23,17,22,.14) .6px, transparent .6px);
+    background-size:14px 14px;
+    mix-blend-mode:multiply;
+  }
+
+  .page{
     position:relative;
     z-index:1;
-    width:100%;
-    max-width:440px;
-    padding:48px 20px 64px;
+    max-width:1180px;
+    margin:0 auto;
+    padding:28px 20px 56px;
+  }
+
+  .topbar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+    margin-bottom:22px;
+  }
+
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+  }
+
+  .brand img{
+    width:54px;
+    height:54px;
+    border-radius:18px;
+    object-fit:cover;
+    box-shadow:0 12px 30px rgba(98,38,61,.18);
+  }
+
+  .brand-copy{
     display:flex;
     flex-direction:column;
+    gap:2px;
+  }
+
+  .eyebrow{
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:.24em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+  }
+
+  .brand-copy strong{
+    font-size:16px;
+    font-weight:800;
+    letter-spacing:-.03em;
+  }
+
+  .live-chip{
+    display:inline-flex;
     align-items:center;
-    gap:6px;
+    gap:9px;
+    padding:12px 16px;
+    border-radius:999px;
+    border:1px solid rgba(217,74,124,.18);
+    background:rgba(255,251,247,.75);
+    box-shadow:0 8px 24px rgba(44,21,32,.08);
+    font-size:12px;
+    font-weight:700;
+    color:var(--ink);
+    text-decoration:none;
+    backdrop-filter:blur(18px);
   }
 
-  .avatar{
-    width:110px;
-    height:110px;
+  .live-chip::before{
+    content:"";
+    width:8px;
+    height:8px;
     border-radius:50%;
-    background:var(--card);
-    border:3px solid var(--pink);
-    box-shadow:0 0 20px var(--pink-glow),0 0 60px rgba(255,105,180,.12);
-    overflow:hidden;
-    margin-bottom:10px;
-    user-select:none;
+    background:var(--rose);
+    box-shadow:0 0 0 6px rgba(255,108,151,.12);
   }
 
-  .avatar img{
+  .hero{
+    display:grid;
+    grid-template-columns:minmax(0, 1.02fr) minmax(0, .98fr);
+    gap:22px;
+    align-items:stretch;
+  }
+
+  .panel{
+    position:relative;
+    border:1px solid rgba(255,255,255,.45);
+    border-radius:36px;
+    background:var(--card);
+    box-shadow:var(--shadow);
+    backdrop-filter:blur(22px);
+    overflow:hidden;
+  }
+
+  .copy-panel{
+    padding:34px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    min-height:720px;
+  }
+
+  .status-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-bottom:22px;
+  }
+
+  .status-row span{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:10px 14px;
+    border-radius:999px;
+    background:rgba(255,255,255,.65);
+    border:1px solid var(--line);
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+  }
+
+  .kicker{
+    margin-bottom:14px;
+    font-size:15px;
+    font-weight:700;
+    letter-spacing:.04em;
+    text-transform:uppercase;
+    color:var(--rose-deep);
+  }
+
+  h1{
+    max-width:11ch;
+    font-family:"Instrument Serif",serif;
+    font-size:clamp(3.5rem, 8vw, 6.3rem);
+    line-height:.92;
+    letter-spacing:-.05em;
+    font-weight:400;
+    text-wrap:balance;
+  }
+
+  .lede{
+    max-width:30rem;
+    margin-top:18px;
+    font-size:17px;
+    line-height:1.68;
+    color:var(--ink-soft);
+  }
+
+  .lede strong{
+    color:var(--ink);
+    font-weight:800;
+  }
+
+  .cta-block{
+    margin-top:34px;
+  }
+
+  .cta-group{
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+    margin-bottom:18px;
+  }
+
+  .cta{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    min-height:60px;
+    padding:16px 24px;
+    border-radius:999px;
+    text-decoration:none;
+    font-size:15px;
+    font-weight:800;
+    letter-spacing:.02em;
+    transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease, background .25s ease;
+  }
+
+  .cta:hover,
+  .cta:focus-visible{
+    transform:translateY(-2px);
+  }
+
+  .cta.primary{
+    background:linear-gradient(135deg, #ff8dae 0%, var(--rose) 45%, var(--rose-deep) 100%);
+    color:#fff;
+    box-shadow:0 16px 40px rgba(217,74,124,.28);
+  }
+
+  .cta.primary:hover,
+  .cta.primary:focus-visible{
+    box-shadow:0 22px 44px rgba(217,74,124,.34);
+  }
+
+  .cta.secondary{
+    color:var(--ink);
+    background:rgba(255,255,255,.58);
+    border:1px solid var(--line);
+  }
+
+  .cta.secondary:hover,
+  .cta.secondary:focus-visible{
+    border-color:rgba(217,74,124,.28);
+    box-shadow:0 14px 30px rgba(44,21,32,.10);
+  }
+
+  .support-line{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px 16px;
+    font-size:13px;
+    color:var(--ink-soft);
+  }
+
+  .support-line span{
+    position:relative;
+    padding-left:16px;
+  }
+
+  .support-line span::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:7px;
+    width:6px;
+    height:6px;
+    border-radius:50%;
+    background:rgba(217,74,124,.65);
+  }
+
+  .feature-strip{
+    display:grid;
+    grid-template-columns:repeat(3, minmax(0, 1fr));
+    gap:12px;
+    margin-top:28px;
+  }
+
+  .feature-card{
+    padding:18px;
+    border-radius:24px;
+    background:rgba(255,255,255,.54);
+    border:1px solid var(--line);
+    min-height:138px;
+  }
+
+  .feature-card strong{
+    display:block;
+    margin-bottom:10px;
+    font-size:15px;
+    font-weight:800;
+    letter-spacing:-.02em;
+  }
+
+  .feature-card p{
+    font-size:13px;
+    line-height:1.6;
+    color:var(--ink-soft);
+  }
+
+  .media-panel{
+    padding:18px;
+    display:grid;
+    grid-template-rows:minmax(0, 1.25fr) minmax(0, .75fr);
+    gap:16px;
+    min-height:720px;
+  }
+
+  .hero-shot{
+    position:relative;
+    overflow:hidden;
+    border-radius:28px;
+    background:#dac8ba;
+    min-height:430px;
+  }
+
+  .hero-shot::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+      linear-gradient(180deg, rgba(8,6,8,.02) 0%, rgba(8,6,8,.26) 100%),
+      radial-gradient(circle at 18% 18%, rgba(255,255,255,.25), transparent 28%);
+    pointer-events:none;
+  }
+
+  .hero-shot img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transform:scale(1.02);
+  }
+
+  .floating-card{
+    position:absolute;
+    left:20px;
+    right:20px;
+    bottom:20px;
+    display:flex;
+    justify-content:space-between;
+    gap:18px;
+    padding:18px 20px;
+    border-radius:24px;
+    background:rgba(24,15,22,.34);
+    border:1px solid rgba(255,255,255,.18);
+    backdrop-filter:blur(18px);
+    color:#fff;
+  }
+
+  .floating-card strong{
+    display:block;
+    font-size:14px;
+    font-weight:800;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    opacity:.82;
+  }
+
+  .floating-card p{
+    margin-top:6px;
+    max-width:18ch;
+    font-family:"Instrument Serif",serif;
+    font-size:33px;
+    line-height:.95;
+    letter-spacing:-.05em;
+  }
+
+  .floating-card span{
+    align-self:flex-end;
+    display:inline-flex;
+    padding:10px 14px;
+    border-radius:999px;
+    background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.16);
+    font-size:12px;
+    font-weight:700;
+  }
+
+  .preview-grid{
+    display:grid;
+    grid-template-columns:repeat(3, minmax(0, 1fr));
+    gap:12px;
+  }
+
+  .preview{
+    position:relative;
+    overflow:hidden;
+    border-radius:24px;
+    min-height:214px;
+    box-shadow:0 16px 40px rgba(44,21,32,.12);
+  }
+
+  .preview img{
     width:100%;
     height:100%;
     object-fit:cover;
   }
 
-  .name{
-    font-size:26px;
-    font-weight:700;
-    letter-spacing:-.5px;
-  }
-
-  .handle{
-    font-size:13px;
-    color:var(--sub);
-    margin-top:2px;
-  }
-
-  .tagline{
-    font-size:14px;
-    color:var(--pink);
-    margin:8px 0 24px;
-    font-weight:500;
-    opacity:.9;
-  }
-
-  /* stats row */
-  .stats{
-    display:flex;
-    gap:28px;
-    margin-bottom:24px;
-    font-size:13px;
-    color:var(--sub);
-  }
-  .stats span{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    gap:2px;
-  }
-  .stats strong{
-    color:var(--text);
-    font-size:16px;
-    font-weight:700;
-  }
-
-  .links{
-    width:100%;
-    display:flex;
-    flex-direction:column;
-    gap:12px;
-  }
-
-  .link-btn{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:10px;
-    width:100%;
-    padding:15px 20px;
-    background:var(--card);
-    border:1px solid rgba(255,105,180,.12);
-    border-radius:14px;
-    color:var(--text);
-    text-decoration:none;
-    font-size:15px;
-    font-weight:600;
-    text-align:center;
-    letter-spacing:.2px;
-    transition:all .25s ease;
-    position:relative;
-    overflow:hidden;
-  }
-
-  .link-btn::before{
-    content:'';
+  .preview::after{
+    content:"";
     position:absolute;
     inset:0;
-    border-radius:14px;
-    opacity:0;
-    background:radial-gradient(circle at center,var(--pink-glow) 0%,transparent 70%);
-    transition:opacity .3s ease;
+    background:linear-gradient(180deg, transparent 35%, rgba(16,9,15,.28) 100%);
   }
 
-  .link-btn:hover,.link-btn:focus-visible{
-    border-color:var(--pink);
-    box-shadow:0 0 18px rgba(255,105,180,.2),0 4px 20px rgba(0,0,0,.3);
-    transform:translateY(-2px);
-    background:var(--card-hover);
-  }
-
-  .link-btn:hover::before{opacity:1}
-
-  .link-btn:active{
-    transform:translateY(0);
-    box-shadow:0 0 10px rgba(255,105,180,.12);
-  }
-
-  .link-btn .icon{
-    font-size:18px;
-    position:relative;
+  .preview span{
+    position:absolute;
+    left:14px;
+    bottom:14px;
     z-index:1;
-  }
-
-  .link-btn .label{
-    position:relative;
-    z-index:1;
-  }
-
-  .link-btn.featured{
-    background:linear-gradient(135deg,var(--pink-dark),var(--pink));
-    border:none;
-    color:#fff;
-    font-size:16px;
-    padding:17px 20px;
-  }
-
-  .link-btn.featured::before{
-    background:radial-gradient(circle at center,rgba(255,255,255,.15) 0%,transparent 70%);
-  }
-
-  .link-btn.featured:hover{
-    box-shadow:0 0 28px var(--pink-glow),0 4px 32px rgba(0,0,0,.4);
-    background:linear-gradient(135deg,var(--pink-dark),var(--pink));
-  }
-
-  /* social row */
-  .socials{
-    display:flex;
-    gap:16px;
-    margin-top:24px;
-  }
-
-  .social-icon{
-    width:44px;
-    height:44px;
-    border-radius:50%;
-    background:var(--card);
-    border:1px solid rgba(255,105,180,.12);
-    display:flex;
+    display:inline-flex;
     align-items:center;
-    justify-content:center;
-    color:var(--sub);
-    text-decoration:none;
-    font-size:18px;
-    transition:all .25s ease;
-  }
-
-  .social-icon:hover{
-    border-color:var(--pink);
-    color:var(--pink);
-    box-shadow:0 0 14px rgba(255,105,180,.2);
-    transform:translateY(-2px);
-  }
-
-  .social-icon svg{
-    width:20px;
-    height:20px;
-    fill:currentColor;
+    min-height:32px;
+    padding:8px 11px;
+    border-radius:999px;
+    background:rgba(255,255,255,.85);
+    border:1px solid rgba(255,255,255,.36);
+    font-size:11px;
+    font-weight:800;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--ink);
   }
 
   .footer{
-    margin-top:36px;
-    font-size:11px;
-    color:#444;
-    letter-spacing:.5px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:16px;
+    margin-top:18px;
+    padding:0 6px;
+    font-size:12px;
+    color:var(--ink-soft);
   }
 
-  .sparkle{
-    position:fixed;
-    width:2px;
-    height:2px;
-    border-radius:50%;
-    background:var(--pink);
-    opacity:0;
-    pointer-events:none;
-    z-index:0;
-    animation:sparkle 4s ease-in-out infinite;
+  .footer a{
+    color:inherit;
+    text-decoration:none;
+    font-weight:700;
   }
 
-  @keyframes sparkle{
-    0%,100%{opacity:0;transform:scale(0)}
-    50%{opacity:.5;transform:scale(1)}
+  @media (max-width: 980px){
+    .hero{
+      grid-template-columns:1fr;
+    }
+
+    .copy-panel,
+    .media-panel{
+      min-height:auto;
+    }
+  }
+
+  @media (max-width: 720px){
+    .page{
+      padding:16px 14px 28px;
+    }
+
+    .topbar{
+      align-items:flex-start;
+      flex-direction:column;
+    }
+
+    .copy-panel{
+      padding:24px;
+      border-radius:30px;
+    }
+
+    .media-panel{
+      padding:14px;
+      border-radius:30px;
+    }
+
+    .feature-strip,
+    .preview-grid{
+      grid-template-columns:1fr;
+    }
+
+    .status-row{
+      gap:8px;
+      margin-bottom:18px;
+    }
+
+    .status-row span{
+      padding:9px 13px;
+      font-size:11px;
+    }
+
+    .kicker{
+      max-width:24ch;
+      margin-bottom:12px;
+      font-size:12px;
+      line-height:1.45;
+    }
+
+    h1{
+      max-width:9.4ch;
+      font-size:clamp(3.2rem, 13vw, 4.5rem);
+      line-height:1;
+      letter-spacing:-.04em;
+    }
+
+    .lede{
+      margin-top:16px;
+      font-size:16px;
+      line-height:1.6;
+    }
+
+    .cta-block{
+      margin-top:28px;
+    }
+
+    .feature-card{
+      min-height:0;
+    }
+
+    .floating-card{
+      flex-direction:column;
+      align-items:flex-start;
+    }
+
+    .floating-card p{
+      max-width:none;
+      font-size:29px;
+    }
+
+    .footer{
+      flex-direction:column;
+      align-items:flex-start;
+    }
   }
 </style>
 </head>
 <body>
+  <div class="page">
+    <header class="topbar">
+      <div class="brand">
+        <img src="https://files.catbox.moe/0hotee.png" alt="Remi">
+        <div class="brand-copy">
+          <span class="eyebrow">remi.mp4</span>
+          <strong>Fanvue launch week</strong>
+        </div>
+      </div>
+      <a class="live-chip" href="https://www.fanvue.com/remimp4?free_trial=cc9ad1a6-e12c-4458-821d-272f04f47269" target="_blank" rel="noopener">Free trial live now</a>
+    </header>
 
-<div class="container">
-  <div class="avatar">
-    <img src="https://files.catbox.moe/0hotee.png" alt="Remi">
+    <main class="hero">
+      <section class="panel copy-panel">
+        <div>
+          <div class="status-row">
+            <span>Miami</span>
+            <span>Weekly drops</span>
+            <span>Direct replies</span>
+          </div>
+
+          <p class="kicker">Pink hair. Pool mornings. Late-night mirror pics.</p>
+          <h1>the good stuff lives on Fanvue.</h1>
+          <p class="lede">
+            Remi’s public feed stays cute. <strong>Fanvue gets the full edit</strong>:
+            new sets every week, extra photos, behind-the-scenes shots, and messages that actually get answered.
+          </p>
+
+          <div class="cta-block">
+            <div class="cta-group">
+              <a class="cta primary" href="https://www.fanvue.com/remimp4?free_trial=cc9ad1a6-e12c-4458-821d-272f04f47269" target="_blank" rel="noopener">Start the free trial</a>
+              <a class="cta secondary" href="https://www.fanvue.com/remimp4" target="_blank" rel="noopener">Browse the page</a>
+            </div>
+            <div class="support-line">
+              <span>7-day offer live</span>
+              <span>New drops every week</span>
+              <span>Message me there</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="feature-strip">
+          <article class="feature-card">
+            <strong>Private feed</strong>
+            <p>Pool sets, mirror shots, soft-launch extras, and the posts that never make it to IG.</p>
+          </article>
+          <article class="feature-card">
+            <strong>Actually active</strong>
+            <p>Follower messaging is on, replies are open, and the page already has fresh posts live.</p>
+          </article>
+          <article class="feature-card">
+            <strong>Built for conversion</strong>
+            <p>Clean free-trial path, profile preview, and a warmer landing page that feels like a real brand surface.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel media-panel">
+        <div class="hero-shot">
+          <img src="./assets/hero-ocean.jpg" alt="Remi by the ocean at golden hour">
+          <div class="floating-card">
+            <div>
+              <strong>Live on Fanvue</strong>
+              <p>soft launch, but make it pretty</p>
+            </div>
+            <span>@remimp4</span>
+          </div>
+        </div>
+
+        <div class="preview-grid">
+          <figure class="preview">
+            <img src="./assets/tile-pool.jpg" alt="Remi at a rooftop pool">
+            <span>Pool mornings</span>
+          </figure>
+          <figure class="preview">
+            <img src="./assets/tile-doorway.jpg" alt="Remi in a doorway portrait">
+            <span>Mirror energy</span>
+          </figure>
+          <figure class="preview">
+            <img src="./assets/tile-rooftop.jpg" alt="Remi on a rooftop at night">
+            <span>Night shots</span>
+          </figure>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>18+ only. Curated by Remi.</span>
+      <span>
+        <a href="https://instagram.com/remi.mp4" target="_blank" rel="noopener">Instagram</a>
+        &nbsp;&nbsp;/&nbsp;&nbsp;
+        <a href="https://www.fanvue.com/remimp4" target="_blank" rel="noopener">Fanvue</a>
+      </span>
+    </footer>
   </div>
-
-  <h1 class="name">remi</h1>
-  <p class="handle">@remi.mp4</p>
-  <p class="tagline">miami girl w pink hair & too many selfies</p>
-
-  <div class="links">
-    <a href="https://fanvue.com/remimp4" target="_blank" rel="noopener" class="link-btn featured">
-      <span class="icon">&#x1F525;</span>
-      <span class="label">exclusive content</span>
-    </a>
-    <a href="https://instagram.com/remi.mp4" target="_blank" rel="noopener" class="link-btn">
-      <span class="icon">&#x1F4F8;</span>
-      <span class="label">instagram</span>
-    </a>
-    <a href="#" class="link-btn">
-      <span class="icon">&#x1F4AC;</span>
-      <span class="label">dm me on ig for custom requests</span>
-    </a>
-    <a href="#" class="link-btn">
-      <span class="icon">&#x1F3AC;</span>
-      <span class="label">tiktok (coming soon)</span>
-    </a>
-  </div>
-
-  <div class="socials">
-    <!-- Instagram -->
-    <a href="https://instagram.com/remi.mp4" target="_blank" rel="noopener" class="social-icon" title="Instagram">
-      <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-    </a>
-    <!-- TikTok -->
-    <a href="#" class="social-icon" title="TikTok">
-      <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.88-2.88 2.89 2.89 0 0 1 2.88-2.88c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 0 0-.79-.05A6.34 6.34 0 0 0 3.15 15a6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.75a8.18 8.18 0 0 0 4.76 1.52v-3.4a4.85 4.85 0 0 1-1-.18z"/></svg>
-    </a>
-    <!-- Twitter/X -->
-    <a href="#" class="social-icon" title="Twitter">
-      <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-    </a>
-  </div>
-
-  <p class="footer">remi.mp4</p>
-</div>
-
-<script>
-(function(){
-  var count=15;
-  for(var i=0;i<count;i++){
-    var s=document.createElement('div');
-    s.className='sparkle';
-    s.style.left=Math.random()*100+'vw';
-    s.style.top=Math.random()*100+'vh';
-    s.style.animationDelay=(Math.random()*4)+'s';
-    s.style.animationDuration=(3+Math.random()*4)+'s';
-    s.style.width=s.style.height=(1+Math.random()*2)+'px';
-    document.body.appendChild(s);
-  }
-})();
-</script>
 </body>
 </html>
